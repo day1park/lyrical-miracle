@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
+import Spinner from "../layout/Spinner";
+
 class Tracks extends Component {
   render() {
     return (
       <Consumer>
         {value => {
-          console.log(value);
-          return <h1>Tracky dacks</h1>;
+          const { track_list } = value;
+          // console.log(value);
+          if (track_list === undefined || track_list.length === 0) {
+            return <Spinner />;
+          } else {
+            return <h1>Tracky Dacks</h1>;
+          }
         }}
       </Consumer>
     );
