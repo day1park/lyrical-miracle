@@ -66,7 +66,7 @@ class Lyrics extends Component {
           <ul className="list-group mt-3">
             <li className="list-group-item">
               <strong>
-                <i className="fas fa-guitar" /> Song Genre
+                <i className="fas fa-music" /> Song Genre
               </strong>
               :{" "}
               {track.primary_genres.music_genre_list.length !== 0
