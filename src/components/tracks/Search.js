@@ -13,7 +13,7 @@ class Search extends Component {
 
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.search?q_track=${
+        `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.search?q_track_artist=${
           this.state.trackTitle
         }&page_size=10&page=1&s_track_rating=desc&apikey=${
           process.env.REACT_APP_MM_KEY
@@ -47,7 +47,7 @@ class Search extends Component {
             <div className="card card-body mb-4 p-4">
               <h1 className="display-4 text-center">
                 <img src={logo} alt="Logo" style={{ height: "60px" }} /> Search
-                for a Japanese Song
+                on the Japanese Music Chart
               </h1>
               <p className="lead text-center">
                 Get partial lyrics for any song because this only uses a free
@@ -58,7 +58,7 @@ class Search extends Component {
                   <input
                     type="text"
                     className="form-control form-control-lg"
-                    placeholder="Song title..."
+                    placeholder="Artist or Title..."
                     name="trackTitle"
                     value={this.state.trackTitle}
                     onChange={this.onChange}
