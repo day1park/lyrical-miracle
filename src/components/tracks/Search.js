@@ -7,6 +7,13 @@ class Search extends Component {
   state = {
     trackTitle: ""
   };
+
+  onChange = e => {
+    this.setState({
+      trackTitle: e.target.value
+    });
+  };
+
   render() {
     return (
       <Consumer>
@@ -17,7 +24,22 @@ class Search extends Component {
                 <img src={logo} alt="Logo" style={{ height: "60px" }} /> Search
                 for a Japanese Song
               </h1>
-              <p className="lead text-center">Get the lyrics for any song</p>
+              <p className="lead text-center">
+                Get partial lyrics for any song because this only uses a free
+                API
+              </p>
+              <form>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    className="form-control form-control-lg"
+                    placeholder="Song title..."
+                    name="trackTitle"
+                    value={this.state.trackTitle}
+                    onChange={this.onChange}
+                  />
+                </div>
+              </form>
             </div>
           );
         }}
